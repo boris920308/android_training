@@ -67,7 +67,8 @@ fun GreetingText(
             fontSize = 36.sp,
             modifier = Modifier
                 .padding(16.dp)
-                .align(alignment = Alignment.End)
+                .align(alignment = Alignment.CenterHorizontally),
+
         )
     }
 }
