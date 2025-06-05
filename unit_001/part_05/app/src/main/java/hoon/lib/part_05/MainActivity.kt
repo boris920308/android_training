@@ -36,6 +36,7 @@ class MainActivity : ComponentActivity() {
             TopImage()
             TitleText()
             SecondText()
+            ThirdText()
         }
     }
 
@@ -70,6 +71,16 @@ class MainActivity : ComponentActivity() {
                     start = 16.dp,
                     end = 16.dp
                 )
+        )
+    }
+
+    @Composable
+    fun ThirdText() {
+        Text(
+            text = stringResource(R.string.third_text),
+            textAlign = TextAlign.Justify,
+            modifier = Modifier
+                .padding(16.dp)
         )
     }
 
