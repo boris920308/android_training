@@ -1,5 +1,6 @@
 package hoon.lib.basicscodelab
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -40,9 +41,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BasicsCodelabTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MyApp(modifier = Modifier.fillMaxSize())
-                }
+                MyApp(modifier = Modifier.fillMaxSize())
             }
         }
     }
@@ -138,7 +137,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showBackground = true, widthDp = 320)
+@Preview(
+    showBackground = true,
+    widthDp = 320,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    name = "GreetingPreviewDark"
+)
 @Composable
 fun GreetingPreview() {
     BasicsCodelabTheme {
@@ -151,9 +155,6 @@ fun OnboardingScreen(
     onContinueClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-
-    var shouldShowOnboarding by rememberSaveable { mutableStateOf(true) }
-
     Column(
         modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
