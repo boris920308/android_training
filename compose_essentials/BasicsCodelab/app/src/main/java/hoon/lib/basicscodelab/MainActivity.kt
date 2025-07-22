@@ -167,7 +167,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(
     showBackground = true,
     widthDp = 320,
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
     name = "GreetingPreviewDark"
 )
 @Composable
