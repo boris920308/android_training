@@ -17,6 +17,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.ElevatedButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -29,6 +31,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -127,13 +130,35 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                     )
                 )
             }
-            ElevatedButton(
+//            ElevatedButton(
+//                onClick = {
+//                    expanded.value = !expanded.value
+//                }
+//            ) {
+//                Text(if (expanded.value) stringResource(R.string.show_less) else stringResource(R.string.show_more))
+//
+//            }
+            IconButton(
                 onClick = {
                     expanded.value = !expanded.value
                 }
             ) {
-                Text(if (expanded.value) stringResource(R.string.show_less) else stringResource(R.string.show_more))
-
+                Icon(
+                    painter = if (expanded.value) {
+                        painterResource(
+                            R.drawable.baseline_keyboard_arrow_up_24
+                        )
+                    } else {
+                        painterResource(
+                            R.drawable.baseline_keyboard_arrow_down_24
+                        )
+                    },
+                    contentDescription = if (expanded.value) {
+                        "Expanded"
+                    } else {
+                        ""
+                    }
+                )
             }
         }
     }
