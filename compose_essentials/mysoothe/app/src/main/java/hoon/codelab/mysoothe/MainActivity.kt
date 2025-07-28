@@ -59,6 +59,13 @@ fun SearchBar(
     )
 }
 
+@Composable
+fun AlignYourBodyElement(
+    modifier: Modifier = Modifier
+) {
+
+}
+
 @Preview(
     showBackground = true,
     backgroundColor = 0xFFF5F0EE
@@ -68,6 +75,21 @@ fun SearchBarPreview() {
     MySootheTheme {
         SearchBar(
             Modifier.padding(
+                8.dp
+            )
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    backgroundColor = 0xFFF5F0EE
+)
+@Composable
+fun AlignYourBodyElementPreview() {
+    MySootheTheme {
+        AlignYourBodyElement(
+            modifier = Modifier.padding(
                 8.dp
             )
         )
