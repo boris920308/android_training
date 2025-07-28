@@ -19,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -71,6 +72,9 @@ fun AlignYourBodyElement(
     modifier: Modifier = Modifier
 ) {
     Column(
+        // 일반적으로, 상위 컨테이너 내부에서 컴포저블을 정렬하려면 상위 컨테이너의 alignment를 설정,
+        // 즉, 하위 요소에 상위 요소 배부에 배치되도록 지시하는 대신 상위 요소에 하위 요소를 정렬하는 방법을 지시
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
     ) {
         Image(
