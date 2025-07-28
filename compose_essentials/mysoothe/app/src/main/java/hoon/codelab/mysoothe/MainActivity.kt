@@ -101,6 +101,13 @@ fun AlignYourBodyElement(
     }
 }
 
+@Composable
+fun FavoriteCollectionCard(
+    modifier: Modifier = Modifier
+) {
+
+}
+
 @Preview(
     showBackground = true,
     backgroundColor = 0xFFF5F0EE
@@ -127,6 +134,21 @@ fun AlignYourBodyElementPreview() {
             drawable = R.drawable.hoon_sample_00,
             text = R.string.hoon_sample_string,
             modifier = Modifier.padding(
+                8.dp
+            )
+        )
+    }
+}
+
+@Preview(
+    showBackground = true,
+    backgroundColor = 0xFFF5F0EE
+)
+@Composable
+fun FavoriteCollectionCardPreview() {
+    MySootheTheme {
+        FavoriteCollectionCard(
+            Modifier.padding(
                 8.dp
             )
         )
