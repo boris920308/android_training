@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -32,6 +34,8 @@ fun SearchBar(
         value = "",
         onValueChange = {},
         modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = 56.dp)
     )
 }
 
