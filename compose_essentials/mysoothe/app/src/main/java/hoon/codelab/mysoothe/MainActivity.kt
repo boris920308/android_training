@@ -106,6 +106,8 @@ fun AlignYourBodyElement(
 
 @Composable
 fun FavoriteCollectionCard(
+    @DrawableRes drawable: Int,
+    @StringRes text: Int,
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -117,12 +119,12 @@ fun FavoriteCollectionCard(
             modifier = Modifier.width(255.dp)
         ) {
             Image(
-                painter = painterResource(R.drawable.hoon_sample_00),
+                painter = painterResource(drawable),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.size(80.dp)
             )
-            Text(text = stringResource(R.string.nature_meditations))
+            Text(text = stringResource(text))
         }
     }
 }
@@ -167,6 +169,8 @@ fun AlignYourBodyElementPreview() {
 fun FavoriteCollectionCardPreview() {
     MySootheTheme {
         FavoriteCollectionCard(
+            drawable = R.drawable.hoon_sample_00,
+            text = R.string.nature_meditations,
             Modifier.padding(
                 8.dp
             )
