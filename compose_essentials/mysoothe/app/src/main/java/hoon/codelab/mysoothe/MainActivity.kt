@@ -114,7 +114,9 @@ fun FavoriteCollectionCard(
         Row {
             Image(
                 painter = painterResource(R.drawable.hoon_sample_00),
-                contentDescription = null
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(80.dp)
             )
             Text(text = stringResource(R.string.nature_meditations))
         }
