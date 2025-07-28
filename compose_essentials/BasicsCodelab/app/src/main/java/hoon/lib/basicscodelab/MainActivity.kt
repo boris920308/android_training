@@ -130,14 +130,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                     )
                 )
             }
-//            ElevatedButton(
-//                onClick = {
-//                    expanded.value = !expanded.value
-//                }
-//            ) {
-//                Text(if (expanded.value) stringResource(R.string.show_less) else stringResource(R.string.show_more))
-//
-//            }
             IconButton(
                 onClick = {
                     expanded.value = !expanded.value
