@@ -158,6 +158,12 @@ private data class DrawableStringPair(
     @StringRes val text: Int
 )
 
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
+@Composable
+fun AlignYourBodyRowPreview() {
+    MySootheTheme { AlignYourBodyRow() }
+}
+
 @Preview(
     showBackground = true,
     backgroundColor = 0xFFF5F0EE
