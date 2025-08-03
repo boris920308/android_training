@@ -3,4 +3,11 @@
     <string name="placeholder_search">Search</string>
     <string name="hoon_sample_string">Sea</string>
     <string name="nature_meditations">Nature meditations</string>
+
+    <string name="ab1_zebra">Zebra</string>
+    <string name="ab2_lion">Lion</string>
+    <string name="ab3_butterfly">Butterfly</string>
+    <string name="ab4_dandelion">Dandelion</string>
+    <string name="ab5_giraffe">Giraffe</string>
+    <string name="ab6_seagull">Seagull</string>
 </resources>

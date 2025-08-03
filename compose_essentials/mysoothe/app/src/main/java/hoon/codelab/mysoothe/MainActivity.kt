@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -128,6 +130,33 @@ fun FavoriteCollectionCard(
         }
     }
 }
+
+@Composable
+fun AlignYourBodyRow(
+    modifier: Modifier = Modifier
+) {
+    LazyRow(
+        modifier = modifier
+    ) {
+        items(alignYourBodyData) { item ->
+            AlignYourBodyElement(item.drawable, item.text)
+        }
+    }
+}
+
+private val alignYourBodyData = listOf(
+    R.drawable.zebra to R.string.ab1_zebra,
+    R.drawable.lion to R.string.ab2_lion,
+    R.drawable.butterfly to R.string.ab3_butterfly,
+    R.drawable.dandelion to R.string.ab4_dandelion,
+    R.drawable.giraffe to R.string.ab5_giraffe,
+    R.drawable.seagull to R.string.ab6_seagull
+).map { DrawableStringPair(it.first, it.second) }
+
+private data class DrawableStringPair(
+    @DrawableRes val drawable: Int,
+    @StringRes val text: Int
+)
 
 @Preview(
     showBackground = true,
