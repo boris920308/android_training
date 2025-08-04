@@ -183,13 +183,24 @@ fun FavoriteCollectionsGrid(
     }
 }
 
+@Composable
+fun HomeSection(
+    modifier: Modifier = Modifier
+) {
+
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
+@Composable
+fun HomeSectionPreview() {
+    MySootheTheme { HomeSection() }
+}
+
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
 @Composable
 fun FavoriteCollectionsGridPreview() {
     MySootheTheme { FavoriteCollectionsGrid() }
 }
-
-
 
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
 @Composable
