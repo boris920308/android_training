@@ -201,6 +201,17 @@ fun HomeSection(
     }
 }
 
+@Composable
+fun HomeScreen(modifier: Modifier = Modifier) {
+
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
+@Composable
+fun ScreenContentPreview() {
+    MySootheTheme { HomeScreen() }
+}
+
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
 @Composable
 fun HomeSectionPreview() {
