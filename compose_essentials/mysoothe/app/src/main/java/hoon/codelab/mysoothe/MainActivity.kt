@@ -222,6 +222,16 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
+
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE, heightDp = 100)
+@Composable
+private fun SootheBottomNavigationPreview() {
+    MySootheTheme { SootheBottomNavigation() }
+}
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE, heightDp = 100)
 @Composable
 fun ScreenContentPreview() {
