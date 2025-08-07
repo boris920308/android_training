@@ -267,6 +267,17 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun MySootheAppPortrait() {
+
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE, heightDp = 100)
+@Composable
+private fun MySootheAppPortraitPreview() {
+    MySootheTheme { MySootheAppPortrait() }
+}
+
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE, heightDp = 100)
 @Composable
 private fun SootheBottomNavigationPreview() {
