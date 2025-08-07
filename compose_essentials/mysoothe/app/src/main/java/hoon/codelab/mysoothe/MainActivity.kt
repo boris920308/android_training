@@ -269,6 +269,11 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 }
 
 @Composable
+private fun SootheNavigationRail(modifier: Modifier = Modifier) {
+
+}
+
+@Composable
 fun MySootheAppPortrait() {
     MySootheTheme {
         Scaffold(
@@ -277,6 +282,12 @@ fun MySootheAppPortrait() {
             HomeScreen(Modifier.padding(padding))
         }
     }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE, heightDp = 100)
+@Composable
+private fun SootheNavigationRailPreview() {
+    MySootheTheme { SootheNavigationRail() }
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE, heightDp = 100)
