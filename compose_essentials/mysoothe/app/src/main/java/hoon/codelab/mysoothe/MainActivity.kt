@@ -273,8 +273,13 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 @Composable
 private fun SootheNavigationRail(modifier: Modifier = Modifier) {
     NavigationRail(
+        modifier = modifier.padding(start = 8.dp, end = 8.dp),
+        containerColor = MaterialTheme.colorScheme.background,
     ) {
         Column(
+            modifier = modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             NavigationRailItem(
                 icon = {
@@ -289,7 +294,7 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
                 selected = true,
                 onClick = {}
             )
-
+            Spacer(modifier = Modifier.height(8.dp))
             NavigationRailItem(
                 icon = {
                     Icon(
