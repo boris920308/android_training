@@ -1,6 +1,7 @@
 package hoon.codelab.basicstatecodelab
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -26,7 +27,7 @@ fun WaterCounter(modifier: Modifier = Modifier) {
             var showTask by remember { mutableStateOf(true) }
             if (showTask) {
                 WellnessTaskItem(
-                    onClose = { showTask = false},
+                    onClose = { showTask = false },
                     taskName = "Have you taken your 15minute walk today?"
                 )
             }
@@ -36,12 +37,20 @@ fun WaterCounter(modifier: Modifier = Modifier) {
             )
         }
 
-        Button(
-            onClick = { count++ },
-            Modifier.padding(top = 8.dp),
-            enabled = count < 10
-        ) {
-            Text("Add one")
+        Row(Modifier.padding(top = 8.dp)) {
+            Button(
+                onClick = { count++ },
+                enabled = count < 10
+            ) {
+                Text("Add one")
+            }
+
+            Button(
+                onClick = { count = 0 },
+                 Modifier.padding(start = 8.dp)
+            ) {
+                Text("Clear water counter")
+            }
         }
     }
 }
