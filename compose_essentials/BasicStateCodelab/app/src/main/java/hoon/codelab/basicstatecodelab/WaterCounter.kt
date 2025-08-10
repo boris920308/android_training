@@ -23,6 +23,14 @@ fun WaterCounter(modifier: Modifier = Modifier) {
         var count by remember { mutableStateOf(0) }
 
         if (count > 0) {
+            var showTask by remember { mutableStateOf(true) }
+            if (showTask) {
+                WellnessTaskItem(
+                    onClose = { showTask = false},
+                    taskName = "Have you taken your 15minute walk today?"
+                )
+            }
+
             Text(
                 text = "You've had ${count} glasses.",
             )
