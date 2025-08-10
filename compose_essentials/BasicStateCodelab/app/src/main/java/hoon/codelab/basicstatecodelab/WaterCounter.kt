@@ -10,7 +10,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import hoon.codelab.basicstatecodelab.ui.theme.BasicStateCodelabTheme
 
 @Composable
 fun WaterCounter(modifier: Modifier = Modifier) {
@@ -34,4 +36,10 @@ fun WaterCounter(modifier: Modifier = Modifier) {
             Text("Add one")
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun WaterCounterPreview() {
+    BasicStateCodelabTheme { WaterCounter() }
 }
