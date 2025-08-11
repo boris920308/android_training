@@ -2,15 +2,21 @@ package hoon.codelab.basicstatecodelab
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import hoon.codelab.basicstatecodelab.ui.theme.BasicStateCodelabTheme
 
 @Composable
 fun WellnessScreen(modifier: Modifier = Modifier) {
-    Column {
-        StatefulCounter(modifier)
-        WellnessTasksList()
+    Column(modifier = modifier) {
+        StatefulCounter()
+
+        val list = remember { getWellnessTasks().toMutableList() }
+        WellnessTasksList(
+            list = list,
+            onCloseTask = { task -> list.remove(task)}
+        )
     }
 }
 
@@ -20,4 +26,8 @@ fun WellnessScreenPreview() {
     BasicStateCodelabTheme {
         WellnessScreen()
     }
+}
+
+fun getWellnessTasks() = List(30) { i ->
+    WellnessTask(i, "Task # $i")
 }
