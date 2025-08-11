@@ -1,5 +1,6 @@
 package hoon.codelab.basicstatecodelab
 
+import android.icu.text.AlphabeticIndex.Bucket.LabelType
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -78,3 +79,8 @@ fun WellnessTaskItemPreview() {
         )
     }
 }
+
+data class WellnessTask(
+    val id: Int,
+    val label: String
+)
