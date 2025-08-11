@@ -49,23 +49,6 @@ fun WellnessTaskItem(
     }
 }
 
-@Composable
-fun WellnessTaskItem(
-    taskName: String,
-    onClose: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    var checkedState by rememberSaveable { mutableStateOf(false) }
-
-    WellnessTaskItem(
-        taskName = taskName,
-        checked = checkedState,
-        onCheckedChanged = { newValue -> checkedState = newValue },
-        onClose = onClose,
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun WellnessTaskItemPreview() {
@@ -82,5 +65,6 @@ fun WellnessTaskItemPreview() {
 
 data class WellnessTask(
     val id: Int,
-    val label: String
+    val label: String,
+    var checked: Boolean = false
 )
