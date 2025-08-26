@@ -13,12 +13,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import hoon.example.mycompose.data.HomeMenuItem
+import hoon.example.mycompose.utils.getDummyHomeMenuItem
 
 @Composable
 fun HomeMenuListItem(
     modifier: Modifier = Modifier,
-    icon: ImageVector,
-    label: String,
+    homeMenuItem: HomeMenuItem,
     onClick: () -> Unit = {}
 ) {
     Column(
@@ -28,11 +29,11 @@ fun HomeMenuListItem(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Icon(
-            imageVector = icon,
-            contentDescription = label
+            imageVector = homeMenuItem.icon,
+            contentDescription = homeMenuItem.label
         )
         Text(
-            text = label
+            text = homeMenuItem.label
         )
     }
 
@@ -42,7 +43,6 @@ fun HomeMenuListItem(
 @Composable
 fun HomeMenuListItemPreview() {
     HomeMenuListItem(
-        icon = Icons.Default.Home,
-        label = "Home",
+        homeMenuItem = getDummyHomeMenuItem()[0]
     )
 }
