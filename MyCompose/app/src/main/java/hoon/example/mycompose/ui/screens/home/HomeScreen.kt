@@ -13,19 +13,19 @@ import hoon.example.mycompose.utils.getDummyHomeMenuItem
 
 @Composable
 fun HomeScreen(
+    modifier: Modifier = Modifier,
     homeMenuItem: List<HomeMenuItem>,
     onMenuClick: (HomeMenuItem) -> Unit = {}
 ) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
     ) {
         items(homeMenuItem) { item ->
             HomeMenuListItem(
                 homeMenuItem = item,
-                modifier = Modifier
-                    .fillMaxSize(),
+                modifier = Modifier,
                 onClick = { onMenuClick(item) }
             )
         }
@@ -36,5 +36,5 @@ fun HomeScreen(
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-    HomeScreen(getDummyHomeMenuItem())
+    HomeScreen(homeMenuItem = getDummyHomeMenuItem())
 }
