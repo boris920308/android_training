@@ -1,8 +1,9 @@
 package hoon.example.mycompose.ui
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import hoon.example.mycompose.ui.screens.home.HomeScreen
+import hoon.example.mycompose.utils.getDummyHomeMenuItem
 
 @Composable
 fun MyComposeApp() {
@@ -11,9 +12,7 @@ fun MyComposeApp() {
 
 @Composable
 fun MyComposeAppContent() {
-    Text(
-        text = "Hello MyCompose"
-    )
+    HomeScreen(getDummyHomeMenuItem())
 }
 
 
