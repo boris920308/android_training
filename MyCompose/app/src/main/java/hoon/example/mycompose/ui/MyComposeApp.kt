@@ -3,7 +3,10 @@ package hoon.example.mycompose.ui
 import android.widget.Toast
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -20,7 +23,11 @@ fun MyComposeApp() {
 fun MyComposeAppContent() {
     val context = LocalContext.current
 
-    Scaffold { innerPadding ->
+    Scaffold(
+        topBar = {
+            Text("MyCompose")
+        }
+    ) { innerPadding ->
         HomeScreen(
             modifier = Modifier
                 .padding(innerPadding),
