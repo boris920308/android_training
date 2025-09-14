@@ -23,8 +23,7 @@ fun MyComposeAppContent() {
     Scaffold { innerPadding ->
         HomeScreen(
             modifier = Modifier
-                .padding(innerPadding)
-                .statusBarsPadding(),
+                .padding(innerPadding),
             homeMenuItem = getDummyHomeMenuItem(),
         ) { clickedItem ->
             Toast.makeText(context, "Hello Item!", Toast.LENGTH_SHORT).show()
