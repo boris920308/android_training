@@ -11,7 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHost
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import hoon.example.mycompose.ui.screens.home.HomeScreen
+import hoon.example.mycompose.ui.screens.settings.SettingsScreen
 import hoon.example.mycompose.utils.getDummyHomeMenuItem
 
 @Composable
@@ -22,6 +27,7 @@ fun MyComposeApp() {
 @Composable
 fun MyComposeAppContent() {
     val context = LocalContext.current
+    val navController = rememberNavController()
 
     Scaffold(
         topBar = {
@@ -31,12 +37,25 @@ fun MyComposeAppContent() {
             )
         }
     ) { innerPadding ->
-        HomeScreen(
+        NavHost(
+            navController = navController,
+            startDestination = "home",
             modifier = Modifier
                 .padding(innerPadding),
-            homeMenuItem = getDummyHomeMenuItem(),
-        ) { clickedItem ->
-            Toast.makeText(context, "Hello Item!", Toast.LENGTH_SHORT).show()
+        ) {
+            composable("home") {
+                HomeScreen(
+                    homeMenuItem = getDummyHomeMenuItem(),
+                ) { clickedItem ->
+                    if (clickedItem.label == "Settings") {
+                        navController.navigate("settings")
+                    }
+                    Toast.makeText(context, "Hello ${clickedItem.label}!", Toast.LENGTH_SHORT).show()
+                }
+            }
+            composable("settings") {
+                SettingsScreen()
+            }
         }
     }
 }
