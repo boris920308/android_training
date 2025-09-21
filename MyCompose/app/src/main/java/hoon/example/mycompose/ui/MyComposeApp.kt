@@ -15,6 +15,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import hoon.example.mycompose.ui.navigation.Screen
 import hoon.example.mycompose.ui.screens.home.HomeScreen
 import hoon.example.mycompose.ui.screens.settings.SettingsScreen
 import hoon.example.mycompose.utils.getDummyHomeMenuItem
@@ -39,21 +40,22 @@ fun MyComposeAppContent() {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = "home",
+            startDestination = Screen.Home.route,
             modifier = Modifier
                 .padding(innerPadding),
         ) {
-            composable("home") {
+            composable(Screen.Home.route) {
                 HomeScreen(
                     homeMenuItem = getDummyHomeMenuItem(),
                 ) { clickedItem ->
-                    if (clickedItem.label == "Settings") {
-                        navController.navigate("settings")
+                    if (clickedItem.screen == Screen.Home || clickedItem.screen == Screen.Settings) {
+                        // 구현된 화면에서만 이동
+                        navController.navigate(clickedItem.screen.route)
                     }
                     Toast.makeText(context, "Hello ${clickedItem.label}!", Toast.LENGTH_SHORT).show()
                 }
             }
-            composable("settings") {
+            composable(Screen.Settings.route) {
                 SettingsScreen()
             }
         }
