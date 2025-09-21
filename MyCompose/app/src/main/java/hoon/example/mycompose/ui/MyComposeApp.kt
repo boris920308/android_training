@@ -25,7 +25,10 @@ fun MyComposeAppContent() {
 
     Scaffold(
         topBar = {
-            Text("MyCompose")
+            Text(
+                "MyCompose",
+                modifier = Modifier.statusBarsPadding()
+            )
         }
     ) { innerPadding ->
         HomeScreen(
