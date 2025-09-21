@@ -10,7 +10,6 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import hoon.example.mycompose.data.HomeMenuItem
 import hoon.example.mycompose.ui.navigation.Screen
-import hoon.example.mycompose.ui.screens.home.HomeScreen
 
 fun getDummyHomeMenuItem(): List<HomeMenuItem> {
     val homeMenuItems = listOf(
