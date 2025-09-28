@@ -53,7 +53,6 @@ fun MyComposeAppContent() {
                 HomeScreen(
                     homeMenuItem = getDummyHomeMenuItem(),
                 ) { clickedItem ->
-//                    if (clickedItem.screen == Screen.Home || clickedItem.screen == Screen.Settings) {
                     if (isNavigateHomeMenu(clickedItem)) {
                         // 구현된 화면에서만 이동
                         navController.navigate(clickedItem.screen.route)
