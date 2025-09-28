@@ -13,7 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import hoon.example.mycompose.ui.navigation.Screen
-import hoon.example.mycompose.ui.screens.class_list.ClassListScreen
+import hoon.example.mycompose.ui.screens.classlist.ClassListScreen
 import hoon.example.mycompose.ui.screens.favorite.FavoriteScreen
 import hoon.example.mycompose.ui.screens.home.HomeScreen
 import hoon.example.mycompose.ui.screens.info.InfoScreen

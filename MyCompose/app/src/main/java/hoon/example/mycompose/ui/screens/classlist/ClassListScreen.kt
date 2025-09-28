@@ -1,4 +1,4 @@
-package hoon.example.mycompose.ui.screens.class_list
+package hoon.example.mycompose.ui.screens.classlist
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
