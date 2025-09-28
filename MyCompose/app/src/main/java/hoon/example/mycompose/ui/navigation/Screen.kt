@@ -1,11 +1,11 @@
 package hoon.example.mycompose.ui.navigation
 
-sealed class Screen(val route: String) {
-    object Home : Screen("home")
-    object Settings : Screen("settings")
-    object Favorite : Screen("favorite")
-    object Info : Screen("info")
-    object Profile : Screen("profile")
-    object Notice : Screen("notice")
-    object Add : Screen("add")
+sealed class Screen(val route: String, val isNavigable: Boolean) {
+    object Home : Screen("home", true)
+    object Settings : Screen("settings", true)
+    object Favorite : Screen("favorite", true)
+    object Info : Screen("info", true)
+    object Profile : Screen("profile", true)
+    object Notice : Screen("notice", true)
+    object Add : Screen("add", false)
 }

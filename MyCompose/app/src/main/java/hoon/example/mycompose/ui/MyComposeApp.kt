@@ -81,15 +81,7 @@ fun MyComposeAppContent() {
 }
 
 fun isNavigateHomeMenu(item: HomeMenuItem): Boolean{
-    val navigableScreens = setOf(
-        Screen.Home,
-        Screen.Settings,
-        Screen.Favorite,
-        Screen.Info,
-        Screen.Profile,
-        Screen.Notice
-    )
-    return item.screen in navigableScreens
+    return item.screen.isNavigable
 }
 
 
