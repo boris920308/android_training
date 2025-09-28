@@ -53,7 +53,7 @@ fun MyComposeAppContent() {
                 HomeScreen(
                     homeMenuItem = getDummyHomeMenuItem(),
                 ) { clickedItem ->
-                    if (isNavigateHomeMenu(clickedItem)) {
+                    if (clickedItem.screen.isNavigable) {
                         // 구현된 화면에서만 이동
                         navController.navigate(clickedItem.screen.route)
                     }
@@ -78,11 +78,6 @@ fun MyComposeAppContent() {
         }
     }
 }
-
-fun isNavigateHomeMenu(item: HomeMenuItem): Boolean{
-    return item.screen.isNavigable
-}
-
 
 @Preview(showBackground = true)
 @Composable
