@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.outlined.DateRange
 import hoon.example.mycompose.data.HomeMenuItem
 import hoon.example.mycompose.ui.navigation.Screen
 
@@ -19,7 +20,8 @@ fun getDummyHomeMenuItem(): List<HomeMenuItem> {
         HomeMenuItem(Icons.Default.Info, "Info", Screen.Info),
         HomeMenuItem(Icons.Default.Person, "Profile", Screen.Profile),
         HomeMenuItem(Icons.Default.Notifications, "Notice", Screen.Notice),
-        HomeMenuItem(Icons.Default.Add, "Add", Screen.Add)
+        HomeMenuItem(Icons.Default.Add, "Add", Screen.Add),
+        HomeMenuItem(Icons.Outlined.DateRange, "Class", Screen.ClassList)
     )
     return homeMenuItems
 }

@@ -8,4 +8,6 @@ sealed class Screen(val route: String, val isNavigable: Boolean) {
     object Profile : Screen("profile", true)
     object Notice : Screen("notice", true)
     object Add : Screen("add", false)
+
+    object ClassList : Screen("classList", true)
 }
