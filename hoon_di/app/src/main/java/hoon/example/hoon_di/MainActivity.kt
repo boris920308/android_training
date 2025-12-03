@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+        val factory = UserViewModelFactory()
+        userViewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)
 
         userViewModel.userName.observe(this) { name ->
             binding.tvUserName.text = name
