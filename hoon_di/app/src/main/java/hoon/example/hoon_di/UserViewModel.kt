@@ -4,8 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class UserViewModel : ViewModel() {
-    private val userRepository = UserRepository()
+class UserViewModel(private val userRepository: UserRepositoryInterface) : ViewModel() {
 
     private val _userName = MutableLiveData<String>()
     val userName: LiveData<String> = _userName
