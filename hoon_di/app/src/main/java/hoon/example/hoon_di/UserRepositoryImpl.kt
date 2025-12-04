@@ -1,6 +1,8 @@
 package hoon.example.hoon_di
 
-class UserRepositoryImpl : UserRepositoryInterface {
+import javax.inject.Inject
+
+class UserRepositoryImpl @Inject constructor() : UserRepositoryInterface {
     override fun getUserName(): String {
         return "hoon"
     }

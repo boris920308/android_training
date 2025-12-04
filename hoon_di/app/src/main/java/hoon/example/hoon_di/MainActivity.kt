@@ -1,22 +1,21 @@
 package hoon.example.hoon_di
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
+import dagger.hilt.android.AndroidEntryPoint
 import hoon.example.hoon_di.databinding.ActivityMainBinding
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var userViewModel: UserViewModel
+    private val userViewModel: UserViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val factory = Injection.provideUserViewModelFactory()
-        userViewModel = ViewModelProvider(this, factory).get(UserViewModel::class.java)
 
         userViewModel.userName.observe(this) { name ->
             binding.tvUserName.text = name
